@@ -1,0 +1,43 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using SubChoice.Core.Data.Entities
+@inject SignInManager<User> SignInManager
+@inject UserManager<User> UserManager
+
+<ul class="navbar-nav">
+    @if (SignInManager.IsSignedIn(User))
+    {
+        @if (User.IsInRole("Student"))
+        {
+            <li class="nav-item">
+                <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage"> Student: @User.Identity.Name</a>
+            </li>
+        }
+        else if (User.IsInRole("Teacher"))
+        {
+            <li class="nav-item">
+                <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage"> Teacher: @User.Identity.Name</a>
+            </li>
+        }
+        else if (User.IsInRole("Administrator"))
+        {
+            <li class="nav-item">
+                <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage"> Admin: @User.Identity.Name</a>
+            </li>
+        }
+
+        <li class="nav-item">
+            <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Welcome", "Home", new { area = "" })">
+                <button type="submit" class="nav-link btn btn-link text-dark">Logout</button>
+            </form>
+        </li>
+    }
+    else
+    {
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-controller="Auth" asp-action="Register">Register</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-controller="Auth" asp-action="Login">Login</a>
+        </li>
+    }
+</ul>
