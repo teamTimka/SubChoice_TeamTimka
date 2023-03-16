@@ -8,12 +8,12 @@ The target audience of the project - students and teachers of the university. St
 
 ## Project constraints
 ### Time
-Implementation deadline - 17.05.2023
-Cost - free of charge
-Scope - 
-Quality - project should satisfy main goals and objectives defined in the firts chapter
-Resources - team members, required software(Visual Studio IDE, Microsoft Management Studio) and hardware (student laptops)
-Risks - full time job outside of university is the biggest risk of the project
+#### Implementation deadline - 17.05.2023
+#### Cost - free of charge
+#### Scope - defined by project goals
+#### Quality - project should satisfy main goals and objectives defined in the firts chapter
+#### Resources - team members, required software(Visual Studio IDE, Microsoft Management Studio) and hardware (student laptops)
+#### Risks - full time job outside of university is the biggest risk of the project
 
 ## Team Members
 
